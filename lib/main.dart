@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:senior_tech/my-widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,54 +13,73 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        backgroundColor: const Color(0xFF273243),
+        fontFamily: 'InriaSans',
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'SeniorTech'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+    const TextStyle textStyle = TextStyle(
+      color: Colors.white,
+      fontSize: 30,
+      decoration: TextDecoration.none,
+    );
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            'Senior Tech',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 40,
+              decoration: TextDecoration.none,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+          ),
+          const SizedBox(height: 30),
+          GradButton(
+            onPressed: () {},
+            child: const Text(
+              'Cómo usar el móvil',
+              style: textStyle,
+              textAlign: TextAlign.center,
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+            gradient: const LinearGradient(
+              colors: [Color(0xFFF84545), Color(0xFFAF8312)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(30),
+            height: 200,
+            width: 250,
+          ),
+          const SizedBox(height: 30),
+          GradButton(
+            onPressed: () {},
+            child: const Text(
+              'Navegación segura',
+              style: textStyle,
+              textAlign: TextAlign.center,
+            ),
+            gradient: const LinearGradient(
+              colors: [Color(0xFF1628CF), Color(0xFF2896E5)],
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+            ),
+            borderRadius: BorderRadius.circular(30),
+            height: 200,
+            width: 250,
+          ),
+        ],
       ),
     );
   }
