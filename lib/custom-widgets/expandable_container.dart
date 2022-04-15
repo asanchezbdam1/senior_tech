@@ -8,10 +8,11 @@ class ExpandableContainer extends StatefulWidget {
   final Color? childBackgroundColor;
   final Color? titleColor;
   final double? radius;
-  final double? top;
-  final double? bottom;
-  final double? right;
-  final double? left;
+  final double? paddingTop;
+  final double? paddingBottom;
+  final double? paddingRight;
+  final double? paddingLeft;
+  final EdgeInsetsGeometry? margin;
   final Widget child;
 
   const ExpandableContainer({
@@ -22,10 +23,11 @@ class ExpandableContainer extends StatefulWidget {
     this.backgroundColor,
     this.collapsedBackgroundColor,
     this.gradient,
-    this.top,
-    this.bottom,
-    this.right,
-    this.left,
+    this.paddingTop,
+    this.paddingBottom,
+    this.paddingRight,
+    this.paddingLeft,
+    this.margin,
     this.titleColor,
     this.childBackgroundColor,
   }) : super(key: key);
@@ -56,14 +58,15 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
       );
     }
     return Card(
+      margin: widget.margin ?? const EdgeInsets.all(10),
       color: Colors.transparent,
       shadowColor: Colors.transparent,
       child: Container(
         padding: EdgeInsets.only(
-          left: widget.left ?? 0,
-          top: widget.top ?? 0,
-          right: widget.right ?? 0,
-          bottom: widget.bottom ?? 0,
+          left: widget.paddingLeft ?? 0,
+          top: widget.paddingTop ?? 0,
+          right: widget.paddingRight ?? 0,
+          bottom: widget.paddingBottom ?? 0,
         ),
         decoration: BoxDecoration(
           gradient: widget.gradient,
