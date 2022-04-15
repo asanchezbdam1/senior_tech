@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:senior_tech/my-widgets.dart';
+import 'package:senior_tech/custom-widgets/expandable_container.dart';
 
 class AppList extends StatelessWidget {
   const AppList({Key? key}) : super(key: key);
@@ -28,39 +28,37 @@ class AppList extends StatelessWidget {
       backgroundColor: const Color(0xFF9A2828),
       body: Center(
           child: Column(
-        children: [
-          const ExpandableContainer(
-            title: Text("Título"),
-            child: Text("Hijo"),
-            backgroundColor: Colors.red,
-            collapsedBackgroundColor: Colors.blue,
-          ),
-          const ExpandableContainer(
+        children: const [
+          ExpandableContainer(
             radius: 20,
             gradient: LinearGradient(
-              colors: [Colors.green, Colors.red],
+              colors: [Color(0xFFF63E3E), Color(0xFFF87239)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
-            title: Text("Título 2"),
-            child: Text("Hijo 2"),
+            title: Text("YouTube"),
+            child: Text(
+              "Youtube es una aplicación gratuita para ver vídeos en internet.",
+            ),
             backgroundColor: Colors.transparent,
             collapsedBackgroundColor: Colors.transparent,
+            childBackgroundColor: Color.fromARGB(255, 255, 200, 195),
           ),
           ExpandableContainer(
-            title: Container(
-              child: const Text("Título"),
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.black, Colors.red],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
+            radius: 20,
+            gradient: LinearGradient(
+              colors: [Color(0xFF37C65F), Color(0xFF62C832)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
-            child: const Text("Hijo 3"),
-            backgroundColor: Colors.blue,
-            collapsedBackgroundColor: Colors.green,
+            title: Text("Google Play"),
+            child: Text(
+              "Google Play es la tienda de aplicaciones por excelencia para teléfonos Android. " +
+                  "En esta aplicación puedes descargar otras aplicaciones o juegos gratuitos o comprar música y películas.",
+            ),
+            backgroundColor: Colors.transparent,
+            collapsedBackgroundColor: Colors.transparent,
+            childBackgroundColor: Color(0xFFA7F682),
           ),
         ],
       )),

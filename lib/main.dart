@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:senior_tech/applist.dart';
-import 'package:senior_tech/my-widgets.dart';
+import 'package:senior_tech/custom-widgets/grad_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +13,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
-          backgroundColor: const Color(0xFF273243),
-          fontFamily: 'InriaSans',
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.transparent,
-          )),
+        primarySwatch: Colors.blue,
+        backgroundColor: const Color(0xFF273243),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+        ),
+        textTheme: Theme.of(context).textTheme.apply(
+              fontSizeFactor: 1.5,
+              fontSizeDelta: 2.0,
+              fontFamily: 'InriaSans',
+            ),
+      ),
       home: const MyHomePage(title: 'SeniorTech'),
     );
   }
@@ -58,7 +63,7 @@ class MyHomePage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AppList(),
+                      builder: (context) => const AppList(),
                     ));
               },
               child: const Text(
