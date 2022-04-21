@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:senior_tech/custom-widgets/expandable_container.dart';
+import 'package:senior_tech/custom-widgets/grad_button.dart';
+import 'package:senior_tech/screens/apps/youtube.dart';
 
 class AppList extends StatelessWidget {
   const AppList({Key? key}) : super(key: key);
@@ -30,28 +32,52 @@ class AppList extends StatelessWidget {
         children: [
           Center(
               child: Column(
-            children: const [
+            children: [
               ExpandableContainer(
                 paddingTop: 30,
                 paddingBottom: 30,
                 radius: 20,
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [Color(0xFFF63E3E), Color(0xFFF87239)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
-                title: Text(
+                title: const Text(
                   "YouTube",
                   textScaleFactor: 1.2,
                 ),
-                child: Text(
-                  "Youtube es una aplicación gratuita para ver vídeos en internet.",
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Youtube es una aplicación gratuita para ver vídeos en internet.",
+                      ),
+                      const SizedBox(height: 30),
+                      GradButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const YoutubeMain(),
+                              ));
+                        },
+                        child: const Text("Pulsa aquí para más información"),
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFFF63E3E), Color(0xFFF87239)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ],
+                  ),
                 ),
                 backgroundColor: Colors.transparent,
                 collapsedBackgroundColor: Colors.transparent,
-                childBackgroundColor: Color.fromARGB(255, 255, 200, 195),
+                childBackgroundColor: const Color.fromARGB(255, 255, 200, 195),
               ),
-              ExpandableContainer(
+              const ExpandableContainer(
                 paddingTop: 30,
                 paddingBottom: 30,
                 radius: 20,

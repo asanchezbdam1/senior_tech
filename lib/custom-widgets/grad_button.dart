@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class GradButton extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
+  final EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? padding;
   final double? width;
   final double? height;
   final Gradient? gradient;
@@ -16,12 +18,16 @@ class GradButton extends StatelessWidget {
     this.width,
     this.height,
     this.gradient,
+    this.margin,
+    this.padding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final borderRadius = this.borderRadius ?? BorderRadius.circular(0);
     return Container(
+      margin: margin,
+      padding: padding,
       width: width,
       height: height,
       decoration: BoxDecoration(
