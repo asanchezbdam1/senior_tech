@@ -15,22 +15,15 @@ class YoutubeMain extends StatelessWidget {
   PreferredSizeWidget youTubeAppBar(BuildContext context) {
     return AppBar(
       iconTheme: const IconThemeData(color: Colors.black),
-      leading: GradButton(
+      leading: IconButton(
+        icon: const ImageIcon(
+          AssetImage("assets/images/logos/YouTube_Logo.png"),
+          size: 50,
+          color: Colors.red,
+        ),
         onPressed: () {
           Navigator.pop(context);
         },
-        child: Center(
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: const Icon(
-              Icons.play_arrow_rounded,
-              color: Colors.white,
-            ),
-          ),
-        ),
       ),
       title: const Text("YouTube", style: TextStyle(color: Colors.black)),
       actions: const [
