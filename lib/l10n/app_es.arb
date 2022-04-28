@@ -1,0 +1,14 @@
+{
+    "title": "Senior Tech",
+    "@title": {
+        "description": "Título de la aplicación."
+    },
+    "learnApps": "Cómo usar el móvil",
+    "@learnApps": {
+        "description": "Texto para el botón de cómo usar el teléfono."
+    },
+    "learnSecurity": "Navegación segura",
+    "@learnSecurity": {
+        "description": "Texto para el botón de navegación segura."
+    }
+}
