@@ -10,5 +10,33 @@
     "learnSecurity": "Navegación segura",
     "@learnSecurity": {
         "description": "Texto para el botón de navegación segura."
+    },
+    "ytVideoThumbnail": "Esto es un vídeo de YouTube, y este recuadro su imagen o miniatura.",
+    "@ytVideoThumbnail": {
+        "description": "Texto para la miniatura de los vídeos de YouTube."
+    },
+    "ytVideoTitle": "Y este es su título.",
+    "@ytVideoTitle": {
+        "description": "Texto para el título de los vídeos de YouTube."
+    },
+    "ytVideoChannel": "Nombre del canal.",
+    "@ytVideoChannel": {
+        "description": "Texto para el nombre de canal de los vídeos de YouTube."
+    },
+    "ytHomeBtnText": "Inicio",
+    "@ytHomeBtnText": {
+        "description": "Texto del botón de inicio de YouTube."
+    },
+    "ytShortsBtnText": "Shorts",
+    "@ytShortsBtnText": {
+        "description": "Texto del botón de shorts de YouTube."
+    },
+    "ytSubsBtnText": "Subscripciones",
+    "@ytSubsBtnText": {
+        "description": "Texto del botón de subscripciones de YouTube."
+    },
+    "ytLibBtnText": "Biblioteca",
+    "@ytLibBtnText": {
+        "description": "Texto del botón de biblioteca de YouTube."
     }
 }

@@ -27,7 +27,7 @@ class AppList extends StatelessWidget {
         ),
         title: const Text("Cómo usar el móvil"),
       ),
-      backgroundColor: const Color(0xFF9A2828),
+      backgroundColor: const Color.fromARGB(255, 241, 173, 173),
       body: ListView(
         children: [
           Center(

@@ -12,6 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // No mostrar el Banner de "Debug" en la esquina superior derecha
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
               fontFamily: 'InriaSans',
             ),
       ),
-      home: const MyHomePage(title: "Senior Tech"),
+      home: const MyHomePage(),
     );
   }
 }

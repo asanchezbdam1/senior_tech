@@ -4,9 +4,7 @@ import 'package:senior_tech/screens/applist.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
