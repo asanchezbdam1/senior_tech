@@ -59,7 +59,9 @@ class AppList extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const YoutubeMain(),
+                                builder: (context) => YoutubeMain(
+                                  context: context,
+                                ),
                               ));
                         },
                         child: const Text("Pulsa aquí para más información"),

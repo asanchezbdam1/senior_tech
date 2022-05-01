@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // No mostrar el Banner de "Debug" en la esquina superior derecha
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
