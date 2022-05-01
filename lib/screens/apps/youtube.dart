@@ -1,18 +1,91 @@
 import 'package:flutter/material.dart';
+import 'package:senior_tech/custom-widgets/grad_button.dart';
 import 'package:senior_tech/custom-widgets/popup_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class YoutubeMain extends StatelessWidget {
-  const YoutubeMain({Key? key}) : super(key: key);
+class YoutubeMain extends StatefulWidget {
+  final BuildContext context;
+  const YoutubeMain({Key? key, required this.context}) : super(key: key);
 
   @override
+  State<StatefulWidget> createState() => _YoutubeMainState(context);
+}
+
+class _YoutubeMainState extends State<YoutubeMain> {
+  final BuildContext context;
+  int _index = 0;
+  List<Widget> _widgets = [];
+
+  void _tabChanged(int index) {
+    setState(() {
+      _index = index;
+    });
+  }
+
+  _YoutubeMainState(this.context);
+  @override
   Widget build(BuildContext context) {
+    _widgets = [
+      youTubeVideos(context),
+      const Text("Shorts"),
+      const Text("Add"),
+      youTubeSubs(context),
+      const Text("Historial"),
+    ];
     return Scaffold(
       appBar: youTubeAppBar(context),
-      body: youTubeVideos(context),
-      bottomNavigationBar: youTubeTabBar(context),
+      body: _widgets[_index],
+      bottomNavigationBar: youTubeTabBar(context, _tabChanged, _index),
     );
   }
+}
+
+youTubeSubs(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        flexibleSpace: Row(
+          children: [
+            youTubeChannelAvatarIcon(
+                context,
+                const EdgeInsets.all(5),
+                45,
+                45,
+                const Color.fromARGB(255, 250, 255, 98),
+                const Color.fromARGB(255, 243, 90, 19)),
+            youTubeChannelAvatarIcon(
+                context,
+                const EdgeInsets.all(5),
+                45,
+                45,
+                const Color.fromARGB(255, 223, 50, 23),
+                const Color.fromARGB(255, 176, 243, 19)),
+            youTubeChannelAvatarIcon(
+                context,
+                const EdgeInsets.all(5),
+                45,
+                45,
+                const Color.fromARGB(255, 31, 188, 219),
+                const Color.fromARGB(255, 41, 243, 19)),
+            youTubeChannelAvatarIcon(
+                context,
+                const EdgeInsets.all(5),
+                45,
+                45,
+                const Color.fromARGB(255, 37, 31, 219),
+                const Color.fromARGB(255, 150, 19, 243)),
+            youTubeChannelAvatarIcon(
+                context,
+                const EdgeInsets.all(5),
+                45,
+                45,
+                const Color.fromARGB(255, 219, 31, 75),
+                const Color.fromARGB(255, 243, 138, 19)),
+          ],
+        )),
+    body: youTubeVideos(context),
+  );
 }
 
 PreferredSizeWidget youTubeAppBar(BuildContext context) {
@@ -68,6 +141,23 @@ PreferredSizeWidget youTubeAppBar(BuildContext context) {
   );
 }
 
+Widget youTubeChannelAvatarIcon(BuildContext context, EdgeInsetsGeometry margin,
+    double height, double width, Color begColor, Color endColor) {
+  return GradButton(
+    margin: margin,
+    height: height,
+    width: width,
+    borderRadius: BorderRadius.circular(100),
+    child: const Text(""),
+    onPressed: () {},
+    gradient: LinearGradient(
+      colors: [begColor, endColor],
+      begin: Alignment.topRight,
+      end: Alignment.bottomLeft,
+    ),
+  );
+}
+
 Widget youTubeVideos(BuildContext context) {
   return ListView(
     children: [
@@ -95,8 +185,11 @@ Widget youTubeVideos(BuildContext context) {
   );
 }
 
-BottomNavigationBar youTubeTabBar(BuildContext context) {
+BottomNavigationBar youTubeTabBar(
+    BuildContext context, void Function(int) change, int index) {
   return BottomNavigationBar(
+    currentIndex: index,
+    onTap: change,
     selectedItemColor: Colors.black,
     unselectedItemColor: Colors.black,
     showUnselectedLabels: true,
