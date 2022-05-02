@@ -27,8 +27,8 @@ class _YoutubeMainState extends State<YoutubeMain> {
   Widget build(BuildContext context) {
     _widgets = [
       youTubeVideos(context),
-      const Text("Shorts"),
-      const Text("Add"),
+      Center(child: Text(AppLocalizations.of(context)!.ytShortsText)),
+      Center(child: Text(AppLocalizations.of(context)!.ytAddText)),
       youTubeSubs(context),
       const Text("Historial"),
     ];
@@ -40,7 +40,7 @@ class _YoutubeMainState extends State<YoutubeMain> {
   }
 }
 
-youTubeSubs(BuildContext context) {
+Widget youTubeSubs(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
         backgroundColor: Colors.white,
@@ -219,11 +219,14 @@ BottomNavigationBar youTubeTabBar(
 }
 
 Widget getVideo(BuildContext context, Widget thumbnail, Widget title) {
-  return Column(
-    children: [
-      thumbnail,
-      title,
-    ],
+  return GradButton(
+    child: Column(
+      children: [
+        thumbnail,
+        title,
+      ],
+    ),
+    onPressed: () {},
   );
 }
 

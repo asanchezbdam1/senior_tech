@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:senior_tech/custom-widgets/expandable_container.dart';
 import 'package:senior_tech/custom-widgets/grad_button.dart';
 import 'package:senior_tech/screens/apps/youtube.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppList extends StatelessWidget {
   const AppList({Key? key}) : super(key: key);
@@ -34,6 +35,7 @@ class AppList extends StatelessWidget {
               child: Column(
             children: [
               ExpandableContainer(
+                message: AppLocalizations.of(context)!.ytDescription,
                 paddingTop: 30,
                 paddingBottom: 30,
                 radius: 20,
@@ -50,8 +52,8 @@ class AppList extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      const Text(
-                        "Youtube es una aplicación gratuita para ver vídeos en internet.",
+                      Text(
+                        AppLocalizations.of(context)!.ytDescription,
                       ),
                       const SizedBox(height: 30),
                       GradButton(
@@ -79,22 +81,22 @@ class AppList extends StatelessWidget {
                 collapsedBackgroundColor: Colors.transparent,
                 childBackgroundColor: const Color.fromARGB(255, 255, 200, 195),
               ),
-              const ExpandableContainer(
+              ExpandableContainer(
+                message: AppLocalizations.of(context)!.gpDescription,
                 paddingTop: 30,
                 paddingBottom: 30,
                 radius: 20,
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [Color(0xFF37C65F), Color(0xFF62C832)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
-                title: Text(
+                title: const Text(
                   "Google Play",
                   textScaleFactor: 1.2,
                 ),
                 child: Text(
-                  "Google Play es la tienda de aplicaciones por excelencia para teléfonos Android. " +
-                      "En esta aplicación puedes descargar otras aplicaciones o juegos gratuitos o comprar música y películas.",
+                  AppLocalizations.of(context)!.gpDescription,
                 ),
                 backgroundColor: Colors.transparent,
                 collapsedBackgroundColor: Colors.transparent,

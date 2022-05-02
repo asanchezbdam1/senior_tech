@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:senior_tech/tts-control.dart';
 
 class ExpandableContainer extends StatefulWidget {
   final Widget title;
@@ -7,6 +8,7 @@ class ExpandableContainer extends StatefulWidget {
   final Color? collapsedBackgroundColor;
   final Color? childBackgroundColor;
   final Color? titleColor;
+  final String? message;
   final double? radius;
   final double? paddingTop;
   final double? paddingBottom;
@@ -19,6 +21,7 @@ class ExpandableContainer extends StatefulWidget {
     Key? key,
     required this.title,
     required this.child,
+    this.message,
     this.radius,
     this.backgroundColor,
     this.collapsedBackgroundColor,
@@ -40,7 +43,6 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
   @override
   Widget build(BuildContext context) {
     Widget childitem = widget.child;
-
     if (widget.childBackgroundColor != null) {
       childitem = Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -82,6 +84,11 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
           iconColor: widget.titleColor ?? Colors.white,
           collapsedTextColor: widget.titleColor ?? Colors.white,
           textColor: widget.titleColor ?? Colors.white,
+          onExpansionChanged: (expanding) {
+            if (expanding && widget.message != null) {
+              TTSControl.speak(widget.message!);
+            }
+          },
         ),
       ),
     );

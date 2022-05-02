@@ -3,6 +3,10 @@
     "@title": {
         "description": "Título de la aplicación."
     },
+    "titleWelcome": "Hola y bienvenido. Con esta aplicación podrás aprender a usar diferentes aplicaciones además de navegar de forma más segura. Empieza eligiendo con qué quieres comenzar.",
+    "@titleWelcome": {
+        "description": "Mensaje de bienvenida a la aplicación"
+    },
     "learnApps": "Cómo usar el móvil",
     "@learnApps": {
         "description": "Texto para el botón de cómo usar el teléfono."
@@ -10,6 +14,14 @@
     "learnSecurity": "Navegación segura",
     "@learnSecurity": {
         "description": "Texto para el botón de navegación segura."
+    },
+    "gpDescription": "Google Play es la tienda de aplicaciones por excelencia para teléfonos Android. En esta aplicación puedes descargar otras aplicaciones, juegos gratuitos o comprar música y películas.",
+    "@gpDescription": {
+        "description": "Descripción de Google Play en la lista de aplicaciones."
+    },
+    "ytDescription": "Youtube es una aplicación gratuita para ver vídeos en internet.",
+    "@ytDescription": {
+        "description": "Descripción de YouTube en la lista de aplicaciones."
     },
     "ytVideoThumbnail": "Esto es un vídeo de YouTube, y este recuadro su imagen o miniatura.",
     "@ytVideoThumbnail": {
@@ -38,5 +50,13 @@
     "ytLibBtnText": "Biblioteca",
     "@ytLibBtnText": {
         "description": "Texto del botón de biblioteca de YouTube."
+    },
+    "ytShortsText": "Esta es la pantalla de Shorts. En esta pantalla puedes ver vídeos cortos en formato vertical, cambiando de vídeo solamente deslizando el dedo por la pantalla.",
+    "@ytShortsText": {
+        "description": "Texto de la pantalla de Shorts."
+    },
+    "ytAddText": "Esta es la pantalla de Shorts. En esta pantalla puedes ver vídeos cortos en formato vertical, cambiando de vídeo solamente deslizando el dedo por la pantalla.",
+    "@ytAddText": {
+        "description": "Texto de la pantalla de Añadir/Subir."
     }
 }

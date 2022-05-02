@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:senior_tech/tts-control.dart';
 
 class PopupMessage extends StatelessWidget {
   final String? title;
@@ -25,6 +26,7 @@ class PopupMessage extends StatelessWidget {
     if (title != null) {
       titlewidget = Text(title!);
     }
+    TTSControl.speak(message);
     return SimpleDialog(
       title: titlewidget,
       contentPadding: padding!,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:senior_tech/custom-widgets/grad_button.dart';
 import 'package:senior_tech/screens/applist.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:senior_tech/tts-control.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class MyHomePage extends StatelessWidget {
       fontSize: 30,
       decoration: TextDecoration.none,
     );
+    TTSControl.speak(AppLocalizations.of(context)!.titleWelcome);
     return Container(
       decoration: const BoxDecoration(
         color: Color(0xFF273243),
