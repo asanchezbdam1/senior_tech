@@ -4,6 +4,7 @@ class GradButton extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
+  final Color? color;
   final double? width;
   final double? height;
   final Gradient? gradient;
@@ -20,6 +21,7 @@ class GradButton extends StatelessWidget {
     this.gradient,
     this.margin,
     this.padding,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -37,6 +39,7 @@ class GradButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
+          onPrimary: color ?? Colors.black,
           primary: Colors.transparent,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(borderRadius: borderRadius),

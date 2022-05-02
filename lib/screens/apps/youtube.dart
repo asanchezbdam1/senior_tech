@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:senior_tech/custom-widgets/grad_button.dart';
 import 'package:senior_tech/custom-widgets/popup_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:senior_tech/tts-control.dart';
 
 class YoutubeMain extends StatefulWidget {
   final BuildContext context;
@@ -220,6 +221,8 @@ BottomNavigationBar youTubeTabBar(
 
 Widget getVideo(BuildContext context, Widget thumbnail, Widget title) {
   return GradButton(
+    padding: EdgeInsets.zero,
+    margin: EdgeInsets.zero,
     child: Column(
       children: [
         thumbnail,

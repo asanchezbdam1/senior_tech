@@ -57,6 +57,7 @@ class AppList extends StatelessWidget {
                       ),
                       const SizedBox(height: 30),
                       GradButton(
+                        color: Colors.white,
                         onPressed: () {
                           Navigator.push(
                               context,
