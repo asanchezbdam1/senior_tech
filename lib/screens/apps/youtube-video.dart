@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:senior_tech/custom-widgets/grad_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:senior_tech/screens/apps/youtube.dart';
 
 class YouTubeVideo extends StatelessWidget {
   final BuildContext context;
@@ -10,7 +11,7 @@ class YouTubeVideo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getVideoUI(context),
-      body: Column(children: []),
+      body: ListView(children: [getTopSection(context)]),
     );
   }
 }
@@ -76,4 +77,127 @@ AppBar getVideoUI(BuildContext context) {
           )
         ]),
       ));
+}
+
+Widget getTopSection(BuildContext context) {
+  return Column(
+    children: [
+      ExpansionTile(
+        backgroundColor: Colors.transparent,
+        title: Text(AppLocalizations.of(context)!.ytVideoTitle),
+        subtitle: Text(AppLocalizations.of(context)!.ytVideoData,
+            textScaleFactor: 0.75),
+        children: [
+          Text(AppLocalizations.of(context)!.ytVideoDescription,
+              textScaleFactor: 0.9)
+        ],
+        childrenPadding: EdgeInsets.all(10),
+        iconColor: Colors.black,
+        textColor: Colors.black,
+        collapsedIconColor: Colors.black,
+        collapsedTextColor: Colors.black,
+      ),
+      Center(
+          child: Container(
+              height: 120,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                      width: 100,
+                      child: Column(
+                        children: [
+                          IconButton(
+                            iconSize: 30,
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.thumb_up,
+                              semanticLabel:
+                                  AppLocalizations.of(context)!.ytLikes,
+                            ),
+                            tooltip: AppLocalizations.of(context)!.ytLikes,
+                          ),
+                          Text(AppLocalizations.of(context)!.ytLikes,
+                              textScaleFactor: 0.75),
+                        ],
+                      )),
+                  Container(
+                      width: 100,
+                      child: Column(
+                        children: [
+                          IconButton(
+                            iconSize: 30,
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.thumb_down_outlined,
+                              semanticLabel:
+                                  AppLocalizations.of(context)!.ytDislikes,
+                            ),
+                            tooltip: AppLocalizations.of(context)!.ytDislikes,
+                          ),
+                          Text(AppLocalizations.of(context)!.ytDislikes,
+                              textScaleFactor: 0.75),
+                        ],
+                      )),
+                  Container(
+                      width: 100,
+                      child: Column(
+                        children: [
+                          IconButton(
+                            iconSize: 30,
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.share_outlined,
+                              semanticLabel:
+                                  AppLocalizations.of(context)!.ytShare,
+                            ),
+                            tooltip: AppLocalizations.of(context)!.ytShare,
+                          ),
+                          Text(AppLocalizations.of(context)!.ytShare,
+                              textScaleFactor: 0.75),
+                        ],
+                      )),
+                  Container(
+                      width: 100,
+                      child: Column(
+                        children: [
+                          IconButton(
+                            iconSize: 30,
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.download_outlined,
+                              semanticLabel:
+                                  AppLocalizations.of(context)!.ytDownload,
+                            ),
+                            tooltip: AppLocalizations.of(context)!.ytDownload,
+                          ),
+                          Text(AppLocalizations.of(context)!.ytDownload,
+                              textScaleFactor: 0.75),
+                        ],
+                      )),
+                ],
+              ))),
+      Row(
+        children: [
+          youTubeChannelAvatarIcon(context, EdgeInsets.all(5), 40, 40,
+              Color.fromARGB(255, 238, 30, 30), Colors.yellow),
+          Expanded(
+            child: GradButton(
+                onPressed: () {},
+                child: Text(
+                  AppLocalizations.of(context)!.ytVideoChannel,
+                  overflow: TextOverflow.ellipsis,
+                )),
+          ),
+          GradButton(
+              color: Colors.red,
+              onPressed: () {},
+              child: Text(
+                AppLocalizations.of(context)!.ytSubscribe,
+                textScaleFactor: 0.8,
+              ))
+        ],
+      )
+    ],
+  );
 }
