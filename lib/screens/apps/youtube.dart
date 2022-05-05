@@ -220,7 +220,8 @@ BottomNavigationBar youTubeTabBar(
   );
 }
 
-Widget getVideo(BuildContext context, Widget thumbnail, Widget title) {
+Widget getVideo(BuildContext context, Widget thumbnail, Widget title,
+    {bool popOnTap = false}) {
   return GradButton(
       padding: EdgeInsets.zero,
       margin: EdgeInsets.zero,
@@ -230,13 +231,25 @@ Widget getVideo(BuildContext context, Widget thumbnail, Widget title) {
           title,
         ],
       ),
-      onPressed: () => Navigator.push(
+      onPressed: () {
+        if (popOnTap) {
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(
                 builder: (context) => YouTubeVideo(
                       context: context,
                     )),
-          ));
+          );
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => YouTubeVideo(
+                      context: context,
+                    )),
+          );
+        }
+      });
 }
 
 Widget getTextThumbnail(String text) {

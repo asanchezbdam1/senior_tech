@@ -11,7 +11,21 @@ class YouTubeVideo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getVideoUI(context),
-      body: ListView(children: [getTopSection(context)]),
+      body: ListView(children: [
+        getTopSection(context),
+        getVideo(
+            context,
+            getTextThumbnail(AppLocalizations.of(context)!.ytVideoThumbnail),
+            getTitleAndChannel(AppLocalizations.of(context)!.ytVideoTitle,
+                AppLocalizations.of(context)!.ytVideoChannel),
+            popOnTap: true),
+        getVideo(
+            context,
+            getTextThumbnail(AppLocalizations.of(context)!.ytVideoThumbnail),
+            getTitleAndChannel(AppLocalizations.of(context)!.ytVideoTitle,
+                AppLocalizations.of(context)!.ytVideoChannel),
+            popOnTap: true),
+      ]),
     );
   }
 }
@@ -68,12 +82,25 @@ AppBar getVideoUI(BuildContext context) {
                   icon: const Icon(Icons.fullscreen_exit, color: Colors.white))
             ],
           ),
-          const SizedBox(
-            height: 5,
-            width: 400,
-            child: DecoratedBox(
-              decoration: BoxDecoration(color: Colors.red),
-            ),
+          Row(
+            children: const [
+              SizedBox(
+                height: 5,
+                width: 100,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(color: Colors.red),
+                ),
+              ),
+              Expanded(
+                child: SizedBox(
+                  height: 5,
+                  width: 100,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(color: Colors.grey),
+                  ),
+                ),
+              )
+            ],
           )
         ]),
       ));
@@ -91,19 +118,19 @@ Widget getTopSection(BuildContext context) {
           Text(AppLocalizations.of(context)!.ytVideoDescription,
               textScaleFactor: 0.9)
         ],
-        childrenPadding: EdgeInsets.all(10),
+        childrenPadding: const EdgeInsets.all(10),
         iconColor: Colors.black,
         textColor: Colors.black,
         collapsedIconColor: Colors.black,
         collapsedTextColor: Colors.black,
       ),
       Center(
-          child: Container(
+          child: SizedBox(
               height: 120,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  Container(
+                  SizedBox(
                       width: 100,
                       child: Column(
                         children: [
@@ -121,7 +148,7 @@ Widget getTopSection(BuildContext context) {
                               textScaleFactor: 0.75),
                         ],
                       )),
-                  Container(
+                  SizedBox(
                       width: 100,
                       child: Column(
                         children: [
@@ -139,7 +166,7 @@ Widget getTopSection(BuildContext context) {
                               textScaleFactor: 0.75),
                         ],
                       )),
-                  Container(
+                  SizedBox(
                       width: 100,
                       child: Column(
                         children: [
@@ -157,7 +184,7 @@ Widget getTopSection(BuildContext context) {
                               textScaleFactor: 0.75),
                         ],
                       )),
-                  Container(
+                  SizedBox(
                       width: 100,
                       child: Column(
                         children: [
@@ -179,8 +206,8 @@ Widget getTopSection(BuildContext context) {
               ))),
       Row(
         children: [
-          youTubeChannelAvatarIcon(context, EdgeInsets.all(5), 40, 40,
-              Color.fromARGB(255, 238, 30, 30), Colors.yellow),
+          youTubeChannelAvatarIcon(context, const EdgeInsets.all(5), 40, 40,
+              const Color.fromARGB(255, 238, 30, 30), Colors.yellow),
           Expanded(
             child: GradButton(
                 onPressed: () {},
