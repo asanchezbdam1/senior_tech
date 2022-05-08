@@ -81,124 +81,137 @@ class WhatsAppChat extends StatelessWidget {
         ],
       ),
       body: getBody(context),
-      bottomNavigationBar: Row(children: [
-        const SizedBox(width: 5, height: 70),
-        Flexible(
-            child: Container(
-          height: 60,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100), color: Colors.white),
-          child: Row(children: [
-            IconButton(
-                iconSize: 30,
-                color: const Color.fromARGB(255, 143, 143, 143),
-                onPressed: () {},
-                icon: const Icon(Icons.emoji_emotions_outlined)),
-            Flexible(
-                fit: FlexFit.tight,
-                child: TextField(
-                  cursorColor: const Color.fromARGB(255, 48, 149, 109),
-                  decoration: InputDecoration(
-                    focusedBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            width: 3,
-                            color: Color.fromARGB(255, 48, 149, 109))),
-                    hintText: AppLocalizations.of(context)!.wpMessageHint,
-                  ),
-                )),
-            IconButton(
-                iconSize: 30,
-                color: const Color.fromARGB(255, 143, 143, 143),
-                onPressed: () {},
-                icon: const Icon(Icons.attach_file)),
-            IconButton(
-                iconSize: 30,
-                color: const Color.fromARGB(255, 143, 143, 143),
-                onPressed: () {},
-                icon: const Icon(Icons.camera_alt_rounded)),
-          ]),
-        )),
-        const SizedBox(width: 5, height: 70),
-        CircleAvatar(
-            radius: 30,
-            backgroundColor: const Color.fromARGB(255, 48, 149, 109),
-            child: IconButton(
-              splashRadius: 30,
-              iconSize: 30,
-              icon: const Icon(Icons.mic),
-              onPressed: () {},
-              color: Colors.white,
-              highlightColor: const Color.fromARGB(255, 39, 120, 88),
-            )),
-        const SizedBox(width: 5, height: 70),
-      ]),
     );
   }
 }
 
 Widget getBody(BuildContext context) {
-  return ListView(padding: const EdgeInsets.all(5), reverse: true, children: [
-    Align(
-        alignment: Alignment.centerRight,
-        child: FractionallySizedBox(
-          widthFactor: 0.8,
-          child: GradButton(
+  return Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+    Expanded(
+        child: ListView(
             padding: const EdgeInsets.all(5),
-            borderRadius: BorderRadius.circular(20),
-            gradient: const LinearGradient(colors: [
-              Color.fromARGB(255, 175, 231, 156),
-              Color.fromARGB(255, 175, 231, 156)
-            ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+            reverse: true,
+            children: [
+          Align(
+              alignment: Alignment.centerRight,
+              child: FractionallySizedBox(
+                  widthFactor: 0.8,
+                  child: GradButton(
+                      padding: const EdgeInsets.all(5),
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: const LinearGradient(colors: [
+                        Color.fromARGB(255, 175, 231, 156),
+                        Color.fromARGB(255, 175, 231, 156)
+                      ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+                      onPressed: () {},
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                                AppLocalizations.of(context)!.wpMessageFromUser,
+                                textScaleFactor: 0.9),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: const [
+                                  Text(
+                                    "16:15",
+                                    style: TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 143, 143, 143)),
+                                    textScaleFactor: 0.85,
+                                  ),
+                                  Icon(Icons.check, color: Colors.blue),
+                                  Icon(Icons.check, color: Colors.blue)
+                                ])
+                          ])))),
+          const SizedBox(height: 5),
+          Align(
+              alignment: Alignment.centerLeft,
+              child: FractionallySizedBox(
+                  widthFactor: 0.8,
+                  child: GradButton(
+                      padding: const EdgeInsets.all(5),
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: const LinearGradient(
+                          colors: [Colors.white, Colors.white],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight),
+                      onPressed: () {},
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(AppLocalizations.of(context)!.wpMessage,
+                                textScaleFactor: 0.9),
+                            const Text(
+                              "16:15",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 143, 143, 143)),
+                              textScaleFactor: 0.85,
+                            )
+                          ])))),
+          const SizedBox(height: 5),
+          Align(
+              alignment: Alignment.center,
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(15, 5, 15, 5),
+                decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 150, 208, 255),
+                    borderRadius: BorderRadius.circular(5)),
+                child: Text(AppLocalizations.of(context)!.wpTimeYesterday,
+                    textScaleFactor: 0.85),
+              ))
+        ])),
+    Row(children: [
+      const SizedBox(width: 5, height: 70),
+      Flexible(
+          child: Container(
+              height: 60,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.white),
+              child: Row(children: [
+                IconButton(
+                    iconSize: 30,
+                    color: const Color.fromARGB(255, 143, 143, 143),
+                    onPressed: () {},
+                    icon: const Icon(Icons.emoji_emotions_outlined)),
+                Flexible(
+                    fit: FlexFit.tight,
+                    child: TextField(
+                      cursorColor: const Color.fromARGB(255, 48, 149, 109),
+                      decoration: InputDecoration(
+                        focusedBorder: const UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                width: 3,
+                                color: Color.fromARGB(255, 48, 149, 109))),
+                        hintText: AppLocalizations.of(context)!.wpMessageHint,
+                      ),
+                    )),
+                IconButton(
+                    iconSize: 30,
+                    color: const Color.fromARGB(255, 143, 143, 143),
+                    onPressed: () {},
+                    icon: const Icon(Icons.attach_file)),
+                IconButton(
+                    iconSize: 30,
+                    color: const Color.fromARGB(255, 143, 143, 143),
+                    onPressed: () {},
+                    icon: const Icon(Icons.camera_alt_rounded)),
+              ]))),
+      const SizedBox(width: 5, height: 70),
+      CircleAvatar(
+          radius: 30,
+          backgroundColor: const Color.fromARGB(255, 48, 149, 109),
+          child: IconButton(
+            splashRadius: 30,
+            iconSize: 30,
+            icon: const Icon(Icons.mic),
             onPressed: () {},
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(AppLocalizations.of(context)!.wpMessageFromUser,
-                    textScaleFactor: 0.9),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [
-                    Text(
-                      "16:15",
-                      style:
-                          TextStyle(color: Color.fromARGB(255, 143, 143, 143)),
-                      textScaleFactor: 0.85,
-                    ),
-                    Icon(Icons.check, color: Colors.blue),
-                    Icon(Icons.check, color: Colors.blue)
-                  ],
-                ),
-              ],
-            ),
-          ),
-        )),
-    const SizedBox(height: 5),
-    Align(
-        alignment: Alignment.centerLeft,
-        child: FractionallySizedBox(
-          widthFactor: 0.8,
-          child: GradButton(
-            padding: const EdgeInsets.all(5),
-            borderRadius: BorderRadius.circular(20),
-            gradient: const LinearGradient(
-                colors: [Colors.white, Colors.white],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight),
-            onPressed: () {},
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(AppLocalizations.of(context)!.wpMessage,
-                    textScaleFactor: 0.9),
-                const Text(
-                  "16:15",
-                  style: TextStyle(color: Color.fromARGB(255, 143, 143, 143)),
-                  textScaleFactor: 0.85,
-                ),
-              ],
-            ),
-          ),
-        )),
+            color: Colors.white,
+            highlightColor: const Color.fromARGB(255, 39, 120, 88),
+          )),
+      const SizedBox(width: 5, height: 70),
+    ]),
   ]);
 }
