@@ -144,5 +144,17 @@
     "wpMessageHint": "Mensaje",
     "@wpMessageHint": {
         "description": "Texto de placeholder en entrada de texto de chat en WhatsApp"
+    },
+    "wpYourStatus": "Tu estado",
+    "@wpYourStatus": {
+        "description": "Texto para tu estado en WhatsApp"
+    },
+    "wpAddStatus": "Presiona para añadir un estado",
+    "@wpAddStatus": {
+        "description": "Texto para añadir un estado en WhatsApp"
+    },
+    "wpNotViewedStatus": "Estados no vistos",
+    "@wpNotViewedStatus": {
+        "description": "Texto para estados no vistos en WhatsApp"
     }
 }
