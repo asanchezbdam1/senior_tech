@@ -15,6 +15,16 @@
     "@learnSecurity": {
         "description": "Texto para el botón de navegación segura."
     },
+
+
+    "pressMoreInfo": "Pulsa aquí para más información.",
+    "@pressMoreInfo": {
+        "description": "Texto para el botón de más información."
+    },
+    "wpDescription": "WhatsApp es una aplicación de mensajería instantánea. Puedes enviar mensajes, imágenes y vídeos además de llamar o hacer videollamadas con tus familiares o amigos. Todo de forma gratuita.",
+    "@wpDescription": {
+        "description": "Descripción de WhatsApp en la lista de aplicaciones."
+    },
     "gpDescription": "Google Play es la tienda de aplicaciones por excelencia para teléfonos Android. En esta aplicación puedes descargar otras aplicaciones, juegos gratuitos o comprar música y películas.",
     "@gpDescription": {
         "description": "Descripción de Google Play en la lista de aplicaciones."
@@ -23,6 +33,8 @@
     "@ytDescription": {
         "description": "Descripción de YouTube en la lista de aplicaciones."
     },
+
+
     "ytVideoThumbnail": "Esto es un vídeo de YouTube, y este recuadro su imagen o miniatura.",
     "@ytVideoThumbnail": {
         "description": "Texto para la miniatura de los vídeos de YouTube."
@@ -86,5 +98,51 @@
     "ytAddText": "Esta es la pantalla de Shorts. En esta pantalla puedes ver vídeos cortos en formato vertical, cambiando de vídeo solamente deslizando el dedo por la pantalla.",
     "@ytAddText": {
         "description": "Texto de la pantalla de Añadir/Subir."
+    },
+
+
+    "wpChats": "CONVERSACIONES",
+    "@wpChats": {
+        "description": "Texto de la pestaña de chats de WhatsApp"
+    },
+    "wpStatus": "ESTADOS",
+    "@wpStatus": {
+        "description": "Texto de la pestaña de estados de WhatsApp"
+    },
+    "wpCalls": "LLAMADAS",
+    "@wpCalls": {
+        "description": "Texto de la pestaña de llamadas de WhatsApp"
+    },
+    "wpContactName": "Nombre de contacto",
+    "@wpContactName": {
+        "description": "Nombre de contacto de WhatsApp"
+    },
+    "wpTimeYesterday": "Ayer",
+    "@wpTime": {
+        "description": "Tiempo ayer para WhatsApp"
+    },
+    "wpMessage": "¡Hola! Bienvenido a WhatsApp. Así se verán los mensajes que te envíen tus amigos o familiares.",
+    "@wpMessage": {
+        "description": "Mensaje recibido en WhatsApp"
+    },
+    "wpMessageFromUser": "Hola. Así se vería el mensaje que has enviado como respuesta.",
+    "@wpMessageFromUser": {
+        "description": "Mensaje enviado en WhatsApp"
+    },
+    "wpCameraDescription": "En esta pantalla puedes usar tu cámara para sacar una foto o vídeo. Después, tus contactos podrán ver esa foto o vídeo durante 24h.",
+    "@wpCameraDescription": {
+        "description": "Texto de la pantalla de cámara en WhatsApp"
+    },
+    "wpCallsDescription": "En esta pantalla puedes usar tu cámara para sacar una foto o vídeo. Después, tus contactos podrán ver esa foto o vídeo durante 24h.",
+    "@wpCallsDescription": {
+        "description": "Texto de la pantalla de cámara en WhatsApp"
+    },
+    "wpLastTime": "en línea",
+    "@wpLastTime": {
+        "description": "Texto de última conexión en WhatsApp"
+    },
+    "wpMessageHint": "Mensaje",
+    "@wpMessageHint": {
+        "description": "Texto de placeholder en entrada de texto de chat en WhatsApp"
     }
 }

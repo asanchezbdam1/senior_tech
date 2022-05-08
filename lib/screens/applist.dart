@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:senior_tech/custom-widgets/expandable_container.dart';
 import 'package:senior_tech/custom-widgets/grad_button.dart';
+import 'package:senior_tech/screens/apps/whatsapp.dart';
 import 'package:senior_tech/screens/apps/youtube.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -35,6 +36,50 @@ class AppList extends StatelessWidget {
               child: Column(
             children: [
               ExpandableContainer(
+                message: AppLocalizations.of(context)!.gpDescription,
+                paddingTop: 30,
+                paddingBottom: 30,
+                radius: 20,
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF37C65F), Color(0xFF62C832)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                title: const Text(
+                  "Google Play",
+                  textScaleFactor: 1.2,
+                ),
+                child: Center(
+                    child: Column(children: [
+                  Text(
+                    AppLocalizations.of(context)!.gpDescription,
+                  ),
+                  const SizedBox(height: 30),
+                  GradButton(
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => YoutubeMain(
+                              context: context,
+                            ),
+                          ));
+                    },
+                    child: Text(AppLocalizations.of(context)!.pressMoreInfo),
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF37C65F), Color(0xFF62C832)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ])),
+                backgroundColor: Colors.transparent,
+                collapsedBackgroundColor: Colors.transparent,
+                childBackgroundColor: Color(0xFFA7F682),
+              ),
+              ExpandableContainer(
                 message: AppLocalizations.of(context)!.ytDescription,
                 paddingTop: 30,
                 paddingBottom: 30,
@@ -67,7 +112,8 @@ class AppList extends StatelessWidget {
                                 ),
                               ));
                         },
-                        child: const Text("Pulsa aquí para más información"),
+                        child:
+                            Text(AppLocalizations.of(context)!.pressMoreInfo),
                         gradient: const LinearGradient(
                           colors: [Color(0xFFF63E3E), Color(0xFFF87239)],
                           begin: Alignment.topLeft,
@@ -83,25 +129,54 @@ class AppList extends StatelessWidget {
                 childBackgroundColor: const Color.fromARGB(255, 255, 200, 195),
               ),
               ExpandableContainer(
-                message: AppLocalizations.of(context)!.gpDescription,
+                message: AppLocalizations.of(context)!.wpDescription,
                 paddingTop: 30,
                 paddingBottom: 30,
                 radius: 20,
                 gradient: const LinearGradient(
-                  colors: [Color(0xFF37C65F), Color(0xFF62C832)],
+                  colors: [
+                    Color.fromARGB(255, 55, 198, 129),
+                    Color.fromARGB(255, 90, 206, 36)
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 title: const Text(
-                  "Google Play",
+                  "WhatsApp",
                   textScaleFactor: 1.2,
                 ),
-                child: Text(
-                  AppLocalizations.of(context)!.gpDescription,
-                ),
+                child: Center(
+                    child: Column(children: [
+                  Text(
+                    AppLocalizations.of(context)!.wpDescription,
+                  ),
+                  const SizedBox(height: 30),
+                  GradButton(
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => WhatsAppMain(
+                              context: context,
+                            ),
+                          ));
+                    },
+                    child: Text(AppLocalizations.of(context)!.pressMoreInfo),
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color.fromARGB(255, 55, 198, 129),
+                        Color.fromARGB(255, 90, 206, 36)
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ])),
                 backgroundColor: Colors.transparent,
                 collapsedBackgroundColor: Colors.transparent,
-                childBackgroundColor: Color(0xFFA7F682),
+                childBackgroundColor: Color.fromARGB(255, 167, 241, 195),
               ),
             ],
           )),
