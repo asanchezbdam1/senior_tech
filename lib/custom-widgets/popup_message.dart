@@ -26,7 +26,7 @@ class PopupMessage extends StatelessWidget {
     if (title != null) {
       titlewidget = Text(title!);
     }
-    TTSControl.speak(message);
+    TTSControl.setText(message);
     return SimpleDialog(
       title: titlewidget,
       contentPadding: padding!,

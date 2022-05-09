@@ -3,9 +3,24 @@ import 'package:senior_tech/custom-widgets/grad_button.dart';
 import 'package:senior_tech/screens/applist.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:senior_tech/tts-control.dart';
+import 'package:senior_tech/tts_control_button.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key}) : super(key: key);
+  GlobalKey _parentKey = GlobalKey();
+
+  @override
+  State<StatefulWidget> createState() => _MainMenuState();
+}
+
+class _MainMenuState extends State<MyHomePage> {
+  OverlayEntry? entry;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance?.addPostFrameCallback((_) => onBuilt(context));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +29,14 @@ class MyHomePage extends StatelessWidget {
       fontSize: 30,
       decoration: TextDecoration.none,
     );
-    TTSControl.speak(AppLocalizations.of(context)!.titleWelcome);
+    TTSControl.setText(AppLocalizations.of(context)!.titleWelcome);
     return Container(
       decoration: const BoxDecoration(
         color: Color(0xFF273243),
       ),
       child: Center(
         child: Column(
+          key: widget._parentKey,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
@@ -33,12 +49,13 @@ class MyHomePage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             GradButton(
-              onPressed: () {
-                Navigator.push(
+              onPressed: () async {
+                await Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const AppList(),
                     ));
+                TTSControl.setText(AppLocalizations.of(context)!.titleWelcome);
               },
               child: Text(
                 AppLocalizations.of(context)!.learnApps,
@@ -56,7 +73,9 @@ class MyHomePage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             GradButton(
-              onPressed: () {},
+              onPressed: () async {
+                TTSControl.setText(AppLocalizations.of(context)!.titleWelcome);
+              },
               child: Text(
                 AppLocalizations.of(context)!.learnSecurity,
                 style: textStyle,
@@ -75,5 +94,11 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void onBuilt(BuildContext context) {
+    entry = OverlayEntry(
+        builder: (context) => getControlButton(entry!.markNeedsBuild));
+    Overlay.of(context)?.insert(entry!);
   }
 }

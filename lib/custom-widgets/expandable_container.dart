@@ -86,7 +86,7 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
           textColor: widget.titleColor ?? Colors.white,
           onExpansionChanged: (expanding) {
             if (expanding && widget.message != null) {
-              TTSControl.speak(widget.message!);
+              TTSControl.setText(widget.message!);
             }
           },
         ),
