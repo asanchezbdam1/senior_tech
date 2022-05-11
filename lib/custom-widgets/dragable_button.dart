@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:senior_tech/tts-control.dart';
 
 class DraggableButton extends StatefulWidget {
   final List<Widget> children;
@@ -22,16 +23,18 @@ class _DraggableButtonState extends State<DraggableButton> {
   int _index = 0;
   Offset _offset = const Offset(40, 40);
 
-  void changeChildState() {
-    setState(() {
-      _index = ++_index % widget.children.length;
-      //_child = widget.children[_index];
-    });
+  void changeState() =>
+      setState(() => _index = ++_index % widget.children.length);
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     _child = widget.children[_index];
+    TTSControl.onStop = changeState;
     return Positioned(
         top: _offset.dy,
         left: _offset.dx,
@@ -44,7 +47,7 @@ class _DraggableButtonState extends State<DraggableButton> {
           },
           child: FloatingActionButton(
               onPressed: () {
-                changeChildState();
+                changeState();
                 widget.onPressed();
               },
               child: _child),

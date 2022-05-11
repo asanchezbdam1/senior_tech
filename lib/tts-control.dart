@@ -16,8 +16,8 @@ class TTSControl {
   }
 
   static void stopped() {
-    _isPlaying = false;
     onStop();
+    _isPlaying = false;
   }
 
   static void changeState() {
