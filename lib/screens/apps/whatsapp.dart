@@ -29,12 +29,10 @@ class _WhatsAppMainState extends State<WhatsAppMain>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 300,
-        leading: Expanded(
-            child: TextButton(
-                style: TextButton.styleFrom(primary: Colors.white),
-                child: const Text("WhatsApp"),
-                onPressed: () => Navigator.pop(context))),
+        title: TextButton(
+            style: TextButton.styleFrom(primary: Colors.white),
+            child: const Text("WhatsApp"),
+            onPressed: () => Navigator.pop(context)),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.search_outlined)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
@@ -208,10 +206,12 @@ Widget getStatusList(BuildContext context) {
                 child: Icon(Icons.add, color: Colors.white, size: 35),
                 backgroundColor: Color.fromARGB(255, 39, 120, 88),
               ),
-              Text(AppLocalizations.of(context)!.wpYourStatus),
+              Text(AppLocalizations.of(context)!.wpYourStatus,
+                  overflow: TextOverflow.ellipsis),
               Text(
                 AppLocalizations.of(context)!.wpAddStatus,
                 style: const TextStyle(color: Colors.grey),
+                overflow: TextOverflow.ellipsis,
                 textScaleFactor: 0.8,
               )),
           const SizedBox(height: 10),
@@ -241,10 +241,12 @@ Widget getStatusList(BuildContext context) {
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight)),
                       ))),
-              Text(AppLocalizations.of(context)!.wpContactName),
+              Text(AppLocalizations.of(context)!.wpContactName,
+                  overflow: TextOverflow.ellipsis),
               const Text(
                 "16:23",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(
+                    color: Colors.grey, overflow: TextOverflow.ellipsis),
                 textScaleFactor: 0.8,
               )),
           getStatus(
@@ -268,10 +270,12 @@ Widget getStatusList(BuildContext context) {
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight)),
                       ))),
-              Text(AppLocalizations.of(context)!.wpContactName),
+              Text(AppLocalizations.of(context)!.wpContactName,
+                  overflow: TextOverflow.ellipsis),
               const Text(
                 "11:53",
                 style: TextStyle(color: Colors.grey),
+                overflow: TextOverflow.ellipsis,
                 textScaleFactor: 0.8,
               )),
           getStatus(
@@ -295,10 +299,12 @@ Widget getStatusList(BuildContext context) {
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight)),
                       ))),
-              Text(AppLocalizations.of(context)!.wpContactName),
+              Text(AppLocalizations.of(context)!.wpContactName,
+                  overflow: TextOverflow.ellipsis),
               const Text(
                 "08:22",
                 style: TextStyle(color: Colors.grey),
+                overflow: TextOverflow.ellipsis,
                 textScaleFactor: 0.8,
               )),
         ],
@@ -312,21 +318,21 @@ Widget getStatus(
   return GradButton(
       padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
       onPressed: onPressed ?? () {},
-      child: Row(
-        children: [
-          image,
-          const SizedBox(width: 10),
-          SizedBox(
-            height: 50,
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Flexible(child: title, fit: FlexFit.tight),
-                  subtitle
-                ]),
-          )
-        ],
-      ));
+      child: Row(children: [
+        image,
+        const SizedBox(width: 10),
+        Flexible(
+            fit: FlexFit.tight,
+            child: SizedBox(
+              height: 60,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Flexible(child: title, fit: FlexFit.tight),
+                    subtitle
+                  ]),
+            ))
+      ]));
 }
 
 Widget? getFloatingButton(BuildContext? context, int index) {

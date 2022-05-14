@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:senior_tech/custom-widgets/expandable_container.dart';
 import 'package:senior_tech/custom-widgets/grad_button.dart';
+import 'package:senior_tech/screens/apps/google-play.dart';
 import 'package:senior_tech/screens/apps/whatsapp.dart';
 import 'package:senior_tech/screens/apps/youtube.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -61,7 +62,7 @@ class AppList extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => YoutubeMain(
+                            builder: (context) => GooglePlay(
                               context: context,
                             ),
                           ));
@@ -77,7 +78,7 @@ class AppList extends StatelessWidget {
                 ])),
                 backgroundColor: Colors.transparent,
                 collapsedBackgroundColor: Colors.transparent,
-                childBackgroundColor: Color(0xFFA7F682),
+                childBackgroundColor: const Color(0xFFA7F682),
               ),
               ExpandableContainer(
                 message: AppLocalizations.of(context)!.ytDescription,
@@ -176,7 +177,7 @@ class AppList extends StatelessWidget {
                 ])),
                 backgroundColor: Colors.transparent,
                 collapsedBackgroundColor: Colors.transparent,
-                childBackgroundColor: Color.fromARGB(255, 167, 241, 195),
+                childBackgroundColor: const Color.fromARGB(255, 167, 241, 195),
               ),
             ],
           )),

@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
         textTheme: Theme.of(context).textTheme.apply(
-              fontSizeFactor: 1.5,
+              fontSizeFactor: 2,
               fontSizeDelta: 2.0,
               fontFamily: 'InriaSans',
             ),

@@ -12,6 +12,7 @@ class WhatsAppChat extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 235, 233, 210),
       appBar: AppBar(
+        toolbarHeight: 70,
         foregroundColor: Colors.white,
         backgroundColor: const Color.fromARGB(255, 48, 149, 109),
         automaticallyImplyLeading: false,
@@ -43,7 +44,7 @@ class WhatsAppChat extends StatelessWidget {
               child: Column(
             children: [
               SizedBox(
-                  height: 25,
+                  height: 35,
                   child: Row(children: [
                     Flexible(
                         fit: FlexFit.tight,
@@ -54,7 +55,7 @@ class WhatsAppChat extends StatelessWidget {
                         ))
                   ])),
               SizedBox(
-                  height: 25,
+                  height: 35,
                   child: Row(children: [
                     Flexible(
                         fit: FlexFit.tight,

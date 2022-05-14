@@ -156,5 +156,57 @@
     "wpNotViewedStatus": "Estados no vistos",
     "@wpNotViewedStatus": {
         "description": "Texto para estados no vistos en WhatsApp"
+    },
+    "gpSearch": "Buscar",
+    "@gpSearch": {
+        "description": "Texto para la barra de búsqueda de Google Play"
+    },
+    "gpGames": "Juegos",
+    "@gpGames": {
+        "description": "Texto para la pestaña de juegos de Google Play"
+    },
+    "gpApps": "Apps",
+    "@gpApps": {
+        "description": "Texto para la pestaña de aplicaciones de Google Play"
+    },
+    "gpMovies": "Películas",
+    "@gpMovies": {
+        "description": "Texto para la pestaña de películas de Google Play"
+    },
+    "gpBooks": "Libros",
+    "@gpBooks": {
+        "description": "Texto para la pestaña de libros de Google Play"
+    },
+    "gpRecommended": "Recomendado para ti",
+    "@gpRecommended": {
+        "description": "Texto para la etiqueta de recomendados de Google Play"
+    },
+    "gpCasual": "Juegos casuales",
+    "@gpCasual": {
+        "description": "Texto para la etiqueta de recomendados de Google Play"
+    },
+    "gpGameName": "Juego",
+    "@gpGameName": {
+        "description": "Texto para nombre de juego de Google Play"
+    },
+    "gpGameCategoryAction": "Acción",
+    "@gpGameCategoryAction": {
+        "description": "Texto para la categoría de acción de juego de Google Play"
+    },
+    "gpGameCategoryCasual": "Casual",
+    "@gpGameCategoryCasual": {
+        "description": "Texto para la categoría de casual de juego de Google Play"
+    },
+    "gpAppPaidName": "Aplicación pagada",
+    "@gpAppPaidName": {
+        "description": "Texto para nombre de aplicación pagada de Google Play"
+    },
+    "gpAppName": "Aplicación",
+    "@gpAppName": {
+        "description": "Texto para nombre de aplicación de Google Play"
+    },
+    "gpAppLongName": "Aplicación pero con un nombre más largo",
+    "@gpAppLongName": {
+        "description": "Texto para nombre largo de aplicación de Google Play"
     }
 }

@@ -16,7 +16,7 @@ class YoutubeMain extends StatefulWidget {
 class _YoutubeMainState extends State<YoutubeMain> {
   final BuildContext context;
   int _index = 0;
-  List<Widget> _widgets = [];
+  List<Widget> _tabBodies = [];
 
   void _tabChanged(int index) {
     setState(() {
@@ -27,7 +27,7 @@ class _YoutubeMainState extends State<YoutubeMain> {
   _YoutubeMainState(this.context);
   @override
   Widget build(BuildContext context) {
-    _widgets = [
+    _tabBodies = [
       youTubeVideos(context),
       Center(child: Text(AppLocalizations.of(context)!.ytShortsText)),
       Center(child: Text(AppLocalizations.of(context)!.ytAddText)),
@@ -36,7 +36,7 @@ class _YoutubeMainState extends State<YoutubeMain> {
     ];
     return Scaffold(
       appBar: youTubeAppBar(context),
-      body: _widgets[_index],
+      body: _tabBodies[_index],
       bottomNavigationBar: youTubeTabBar(context, _tabChanged, _index),
     );
   }
@@ -190,6 +190,7 @@ Widget youTubeVideos(BuildContext context) {
 BottomNavigationBar youTubeTabBar(
     BuildContext context, void Function(int) change, int index) {
   return BottomNavigationBar(
+    type: BottomNavigationBarType.fixed,
     currentIndex: index,
     onTap: change,
     selectedItemColor: Colors.black,

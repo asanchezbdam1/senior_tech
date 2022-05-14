@@ -39,11 +39,11 @@ class GradButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          onPrimary: color ?? Colors.black,
-          primary: Colors.transparent,
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(borderRadius: borderRadius),
-        ),
+            onPrimary: color ?? Colors.black,
+            primary: Colors.transparent,
+            shadowColor: Colors.transparent,
+            shape: RoundedRectangleBorder(borderRadius: borderRadius),
+            padding: EdgeInsets.zero),
         child: child,
       ),
     );
