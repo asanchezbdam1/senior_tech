@@ -35,6 +35,8 @@ class TTSControl {
     }
   }
 
+  static String getText() => _text;
+
   static void speak() async {
     _tts.speak(_text);
     _isPlaying = true;

@@ -17,6 +17,12 @@
     },
 
 
+    "back": "Volver",
+    "@back": {
+        "description": "Texto para el botón de volver."
+    },
+
+
     "pressMoreInfo": "Pulsa aquí para más información.",
     "@pressMoreInfo": {
         "description": "Texto para el botón de más información."
@@ -99,6 +105,10 @@
     "@ytAddText": {
         "description": "Texto de la pantalla de Añadir/Subir."
     },
+    "ytTVCast": "Esta es la pantalla de Shorts. En esta pantalla puedes ver vídeos cortos en formato vertical, cambiando de vídeo solamente deslizando el dedo por la pantalla.",
+    "@ytTVCast": {
+        "description": "Texto de descripción de la acción de enviar a TV."
+    },
 
 
     "wpChats": "CONVERSACIONES",
@@ -157,6 +167,8 @@
     "@wpNotViewedStatus": {
         "description": "Texto para estados no vistos en WhatsApp"
     },
+
+
     "gpSearch": "Buscar",
     "@gpSearch": {
         "description": "Texto para la barra de búsqueda de Google Play"
@@ -180,6 +192,10 @@
     "gpRecommended": "Recomendado para ti",
     "@gpRecommended": {
         "description": "Texto para la etiqueta de recomendados de Google Play"
+    },
+    "gpSuggested": "Sugerencias",
+    "@gpSuggested": {
+        "description": "Texto para la etiqueta de sugerencias de Google Play"
     },
     "gpCasual": "Juegos casuales",
     "@gpCasual": {
@@ -208,5 +224,25 @@
     "gpAppLongName": "Aplicación pero con un nombre más largo",
     "@gpAppLongName": {
         "description": "Texto para nombre largo de aplicación de Google Play"
+    },
+    "gpDetailsButtonAction": "Al presionar ese botón, procederás a instalar o comprar la aplicación, libro o película elegido.",
+    "@gpDetailsButtonAction": {
+        "description": "Texto para nombre largo de aplicación de Google Play"
+    },
+    "gpInstall": "INSTALAR",
+    "@gpInstall": {
+        "description": "Texto para el botón de instalar de Google Play"
+    },
+    "gpBuyFor": "COMPRAR POR",
+    "@gpBuyFor": {
+        "description": "Texto para el botón de comprar de Google Play"
+    },
+    "gpScore": "Puntuación",
+    "@gpScore": {
+        "description": "Texto para la etiqueta de puntuación de Google Play"
+    },
+    "gpDetailsDescription": "Descripción de la aplicación, libro o película. En este apartado se incluye normalmente una descripción de la aplicación e información sobre sus últimas actualizaciones.",
+    "@gpDetailsDescription": {
+        "description": "Texto para la descripción de elemento de Google Play"
     }
 }

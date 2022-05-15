@@ -93,12 +93,9 @@ Widget youTubeSubs(BuildContext context) {
 PreferredSizeWidget youTubeAppBar(BuildContext context) {
   return AppBar(
     iconTheme: const IconThemeData(color: Colors.black),
+    leadingWidth: 30,
     leading: IconButton(
-      icon: const ImageIcon(
-        AssetImage("assets/images/logos/YouTube_Logo.png"),
-        size: 50,
-        color: Colors.red,
-      ),
+      icon: const Icon(Icons.arrow_back_rounded, size: 40, color: Colors.red),
       onPressed: () {
         Navigator.pop(context);
       },
@@ -109,9 +106,8 @@ PreferredSizeWidget youTubeAppBar(BuildContext context) {
           onPressed: () {
             showDialog(
               context: context,
-              builder: (BuildContext context) => const PopupMessage(
-                message:
-                    "Dándole a este botón, puedes reproducir o poner en cola vídeos en tu televisor (si este es compatible).",
+              builder: (BuildContext context) => PopupMessage(
+                message: AppLocalizations.of(context)!.ytTVCast,
               ),
             );
           },

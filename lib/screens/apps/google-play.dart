@@ -2,6 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:senior_tech/custom-widgets/grad_button.dart';
+import 'package:senior_tech/models/google_play_app.dart';
+import 'package:senior_tech/models/google_play_book.dart';
+import 'package:senior_tech/models/google_play_element.dart';
+import 'package:senior_tech/models/google_play_movie.dart';
+import 'package:senior_tech/screens/apps/google_play_element_details.dart';
+import 'package:senior_tech/screens/apps/google_play_more_elements.dart';
+import 'package:senior_tech/tts-control.dart';
 
 class GooglePlay extends StatefulWidget {
   final BuildContext context;
@@ -336,7 +343,16 @@ Widget getRecommendedGame(BuildContext context, Widget image, Widget icon,
 Widget getAppBody(BuildContext context) {
   return ListView(children: [
     GradButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => GooglePlayMoreElements(
+                  elementType: GooglePlayApp,
+                  title: AppLocalizations.of(context)!.gpRecommended,
+                ),
+              ));
+        },
         child: Row(
           children: [
             Flexible(
@@ -353,17 +369,31 @@ Widget getAppBody(BuildContext context) {
             scrollDirection: Axis.horizontal,
             children: getRecommendedApps(context))),
     GradButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => GooglePlayMoreElements(
+                  elementType: GooglePlayApp,
+                  title: AppLocalizations.of(context)!.gpSuggested,
+                ),
+              ));
+        },
         child: Row(
           children: [
             Flexible(
-                child: Text(AppLocalizations.of(context)!.gpRecommended,
+                child: Text(AppLocalizations.of(context)!.gpSuggested,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center),
                 fit: FlexFit.tight),
             const Icon(Icons.arrow_forward, size: 30)
           ],
         )),
+    SizedBox(
+        height: 200,
+        child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: getRecommendedApps(context))),
   ]);
 }
 
@@ -371,56 +401,90 @@ List<Widget> getRecommendedApps(BuildContext context) {
   return [
     getElement(
         context,
-        Container(
-            color: const Color.fromARGB(255, 79, 160, 103),
-            child: const Icon(Icons.whatsapp, color: Colors.white, size: 70)),
-        "WhatsApp",
-        4.5,
-        true,
-        null,
-        () {}),
+        GooglePlayApp(
+            Container(
+                color: Colors.red,
+                child: const Icon(Icons.play_arrow,
+                    color: Colors.white, size: 70)),
+            [
+              Container(
+                  color: Colors.red,
+                  child: const Icon(Icons.play_arrow,
+                      color: Colors.white, size: 70))
+            ],
+            "YouTube",
+            4.5,
+            null,
+            null)),
     getElement(
         context,
-        Container(
-            color: const Color.fromARGB(255, 125, 241, 119),
-            child: const Icon(Icons.attach_money_rounded,
-                color: Color.fromARGB(255, 55, 130, 58), size: 70)),
-        AppLocalizations.of(context)!.gpAppPaidName,
-        4.9,
-        true,
-        1.99,
-        () {}),
+        GooglePlayApp(
+            Container(
+                color: const Color.fromARGB(255, 125, 241, 119),
+                child: const Icon(Icons.attach_money_rounded,
+                    color: Color.fromARGB(255, 55, 130, 58), size: 70)),
+            [
+              Container(
+                  color: const Color.fromARGB(255, 125, 241, 119),
+                  child: const Icon(Icons.attach_money_rounded,
+                      color: Color.fromARGB(255, 55, 130, 58), size: 70))
+            ],
+            AppLocalizations.of(context)!.gpAppPaidName,
+            4.9,
+            1.99,
+            null)),
     getElement(
         context,
-        Container(
-            color: Colors.red,
-            child: const Icon(Icons.play_arrow, color: Colors.white, size: 70)),
-        "YouTube",
-        4.5,
-        true,
-        null,
-        () {}),
+        GooglePlayApp(
+            Container(
+                color: const Color.fromARGB(255, 79, 160, 103),
+                child:
+                    const Icon(Icons.whatsapp, color: Colors.white, size: 70)),
+            [
+              Container(
+                  color: const Color.fromARGB(255, 79, 160, 103),
+                  child:
+                      const Icon(Icons.whatsapp, color: Colors.white, size: 70))
+            ],
+            "WhatsApp",
+            4.5,
+            null,
+            null)),
     getElement(
         context,
-        Container(
-            color: Colors.blue,
-            child: const Icon(Icons.message, color: Colors.white, size: 70)),
-        AppLocalizations.of(context)!.gpAppName,
-        4.0,
-        true,
-        null,
-        () {})
+        GooglePlayApp(
+            Container(
+                color: Colors.blue,
+                child:
+                    const Icon(Icons.message, color: Colors.white, size: 70)),
+            [
+              Container(
+                  color: Colors.blue,
+                  child:
+                      const Icon(Icons.message, color: Colors.white, size: 70))
+            ],
+            AppLocalizations.of(context)!.gpAppName,
+            4.0,
+            null,
+            null))
   ];
 }
 
-Widget getElement(BuildContext context, Widget icon, String name, double score,
-    bool isApp, double? price, VoidCallback onPressed) {
+Widget getElement(BuildContext context, GooglePlayElement element) {
   return GradButton(
       width: 150,
-      height: isApp ? 200 : 300,
+      height: element is GooglePlayApp ? 200 : 300,
       padding: const EdgeInsets.all(5),
       margin: EdgeInsets.zero,
-      onPressed: onPressed,
+      onPressed: () async {
+        String text = TTSControl.getText();
+        await Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    GooglePlayElementDetails(element: element)));
+        TTSControl.setText(text);
+      },
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Flexible(
             flex: 5,
@@ -428,12 +492,13 @@ Widget getElement(BuildContext context, Widget icon, String name, double score,
                 heightFactor: 1,
                 widthFactor: 1,
                 child: ClipRRect(
-                    child: icon, borderRadius: BorderRadius.circular(15)))),
+                    child: element.icon,
+                    borderRadius: BorderRadius.circular(15)))),
         Flexible(
             flex: 3,
             child: FractionallySizedBox(
                 widthFactor: 0.9,
-                child: Text(name,
+                child: Text(element.name,
                     textAlign: TextAlign.left,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
@@ -441,11 +506,11 @@ Widget getElement(BuildContext context, Widget icon, String name, double score,
         Expanded(
             flex: 2,
             child: Row(children: [
-              Text(score.toString(), textScaleFactor: 0.65),
+              Text(element.score.toString(), textScaleFactor: 0.65),
               const Icon(Icons.star),
               Container(
-                  child: (price != null)
-                      ? Text(" " + price.toString() + " €",
+                  child: (element.price != null)
+                      ? Text(" " + element.price.toString() + " €",
                           textScaleFactor: 0.65)
                       : null)
             ]))
