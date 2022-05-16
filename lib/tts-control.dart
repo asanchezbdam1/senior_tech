@@ -31,6 +31,10 @@ class TTSControl {
   static void setText(String text) {
     _text = text;
     if (AppSettings.autoplay) {
+      if (_isPlaying) {
+        stop();
+      }
+      onStop();
       speak();
     }
   }

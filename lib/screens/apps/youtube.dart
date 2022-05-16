@@ -17,6 +17,7 @@ class _YoutubeMainState extends State<YoutubeMain> {
   final BuildContext context;
   int _index = 0;
   List<Widget> _tabBodies = [];
+  late List<String> _texts;
 
   void _tabChanged(int index) {
     setState(() {
@@ -27,12 +28,27 @@ class _YoutubeMainState extends State<YoutubeMain> {
   _YoutubeMainState(this.context);
   @override
   Widget build(BuildContext context) {
+    _texts = [
+      AppLocalizations.of(context)!.ytVideosText,
+      AppLocalizations.of(context)!.ytShortsText,
+      AppLocalizations.of(context)!.ytAddText,
+      AppLocalizations.of(context)!.ytSubsText,
+      AppLocalizations.of(context)!.ytLibraryText
+    ];
     _tabBodies = [
       youTubeVideos(context),
-      Center(child: Text(AppLocalizations.of(context)!.ytShortsText)),
-      Center(child: Text(AppLocalizations.of(context)!.ytAddText)),
+      Padding(
+          padding: const EdgeInsets.all(20),
+          child:
+              Center(child: Text(AppLocalizations.of(context)!.ytShortsText))),
+      Padding(
+          padding: const EdgeInsets.all(20),
+          child: Center(child: Text(AppLocalizations.of(context)!.ytAddText))),
       youTubeSubs(context),
-      const Text("Historial"),
+      Padding(
+          padding: const EdgeInsets.all(20),
+          child:
+              Center(child: Text(AppLocalizations.of(context)!.ytLibraryText))),
     ];
     return Scaffold(
       appBar: youTubeAppBar(context),

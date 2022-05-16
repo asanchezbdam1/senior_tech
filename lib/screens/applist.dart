@@ -28,7 +28,7 @@ class AppList extends StatelessWidget {
                 bottomRight: Radius.circular(25),
               )),
         ),
-        title: const Text("Cómo usar el móvil"),
+        title: Text(AppLocalizations.of(context)!.learnApps),
       ),
       backgroundColor: const Color.fromARGB(255, 241, 173, 173),
       body: ListView(
@@ -57,6 +57,7 @@ class AppList extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   GradButton(
+                    padding: const EdgeInsets.all(15),
                     color: Colors.white,
                     onPressed: () {
                       Navigator.push(
@@ -103,6 +104,7 @@ class AppList extends StatelessWidget {
                       ),
                       const SizedBox(height: 30),
                       GradButton(
+                        padding: const EdgeInsets.all(15),
                         color: Colors.white,
                         onPressed: () {
                           Navigator.push(
@@ -153,6 +155,7 @@ class AppList extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   GradButton(
+                    padding: const EdgeInsets.all(15),
                     color: Colors.white,
                     onPressed: () {
                       Navigator.push(

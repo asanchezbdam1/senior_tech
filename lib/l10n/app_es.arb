@@ -23,6 +23,148 @@
     },
 
 
+    "settings": "Ajustes",
+    "@settings": {
+        "description": "Texto para ajustes."
+    },
+    "fontSize": "Tamaño de fuente",
+    "@fontSize": {
+        "description": "Texto para tamaño de fuente."
+    },
+    "autoPlay": "Reproducción automática de narración",
+    "@autoPlay": {
+        "description": "Texto para autoplay."
+    },
+
+
+    "secPasswordsTitle": "Contraseñas seguras",
+    "@secPasswordsTitle": {
+        "description": "Título para contraseñas seguras."
+    },
+    "secPasswordsDesc": "Las contraseñas son la forma de demostrar que puedes acceder a tu cuenta, correo e incluso dispositivo. Aprende sobre buenas costumbres de contraseñas.",
+    "@secPasswordsDesc": {
+        "description": "Descripción para contraseñas seguras."
+    },
+    "secNavigationTitle": "Navegación por Internet",
+    "@secNavigationTitle": {
+        "description": "Título para navegación."
+    },
+    "secNavigationDesc": "Al navegar por Internet te expones a múltiples posibles amenazas. Entrénate para ser más cauto y ser capaz de analizar las posibles estafas en la red.",
+    "@secNavigationDesc": {
+        "description": "Descripción para navegación."
+    },
+    "secScamsTitle": "Prevención de estafas",
+    "@secScamsTitle": {
+        "description": "Título para estafas."
+    },
+    "secScamsDesc": "Más allá de al navegar, a veces las estafas te persiguen hasta tu dispositivo, contactando contigo haciéndose pasar por entidades de confianza. Aprende a detectarlas.",
+    "@secScamsDesc": {
+        "description": "Descripción para estafas."
+    },
+
+    "secPassWriteDown": "Olvídate de recordar",
+    "@secPassWriteDown": {
+        "description": "Título para apartado de contraseñas."
+    },
+    "secPassWriteDownP1": "Como ya sabrás, las contraseñas son la cerradura que protege tu información de terceros. Es muy importante tener una contraseña aceptable, dificultando el acceso de personas no deseadas a tu información.",
+    "@secPassWriteDownP1": {
+        "description": "Párrafo 1 para apartado de contraseñas."
+    },
+    "secPassWriteDownP2": "Por esto, un consejo importante es que es mejor escribir tus contraseñas en un cuaderno sin portada o similar y hacer mejores contraseñas que tener malas contraseñas. Solo asegúrate de que nadie sabe para qué es ese cuaderno.",
+    "@secPassWriteDownP2": {
+        "description": "Párrafo 2 para apartado de contraseñas."
+    },
+    "secPassWriteDownP3": "Se recomienda usar una libreta sin portada y tenerla ligeramente escondida entre otros libros, aunque siempre a mano desde el ordenador.",
+    "@secPassWriteDownP3": {
+        "description": "Párrafo 3 para apartado de contraseñas."
+    },
+
+    "secPassSafePass": "Contraseñas correctas",
+    "@secPassSafePass": {
+        "description": "Título para apartado de contraseñas."
+    },
+    "secPassSafePassP1": "Para hacer una contraseña segura, es importante seguir una serie de reglas. Si no, será más posible que cualquier persona acabe adivinándola y accediendo a tu información.",
+    "@secPassSafePassP1": {
+        "description": "Párrafo 1 para apartado de contraseñas."
+    },
+    "secPassSafePassP2": "El primer consejo es no incluir información personal ni nombres propios o fechas de ningún tipo. El nombre de familiares y una fecha de nacimiento por ejemplo, son una mala combinación de contraseña.",
+    "@secPassSafePassP2": {
+        "description": "Párrafo 2 para apartado de contraseñas."
+    },
+    "secPassSafePassP3": "También es recomendable seguir una serie de requerimientos, cuantos más, mejor. La contraseña debe ser de al menos 8 caracteres, y siempre que se pueda, debe incluir números, letras mayúsculas y minúsculas y caracteres especiales que estén permitidos.",
+    "@secPassSafePassP3": {
+        "description": "Párrafo 3 para apartado de contraseñas."
+    },
+
+    "secNavVirus": "Virus",
+    "@secNavVirus": {
+        "description": "Título para apartado de navegación."
+    },
+    "secNavVirusP1": "Una de las amenazas más oídas al navegar son los famosos virus. Pese a ser tan famosa, ha ido perdiendo fama con el paso del tiempo. Un virus es cualquier tipo de programa informático malicioso.",
+    "@secNavVirusP1": {
+        "description": "Párrafo 1 para apartado de navegación."
+    },
+    "secNavVirusP2": "Es recomendable usar algún tipo de antivirus, pero la mejor defensa es el sentido común. No instales elementos en tu dispositivo fuera de las tiendas oficiales.",
+    "@secNavVirusP2": {
+        "description": "Párrafo 2 para apartado de navegación."
+    },
+    "secNavVirusP3": "Algo tan simple como no descargar aplicaciones o juegos de fuera de Google Play puede protegerte contra gran cantidad de virus.",
+    "@secNavVirusP3": {
+        "description": "Párrafo 3 para apartado de navegación."
+    },
+
+    "secNavFalseVirus": "Falsos Virus",
+    "@secNavFalseVirus": {
+        "description": "Título para apartado de navegación."
+    },
+    "secNavFalseVirusP1": "Al navegar, también nos encontramos a veces con alertas que nos llaman la atención, indicando que algún tipo de virus ha entrado en nuestro teléfono.",
+    "@secNavFalseVirusP1": {
+        "description": "Párrafo 1 para apartado de navegación."
+    },
+    "secNavFalseVirusP2": "Ante esta situación, lo recomendable es salir del navegador, cerrarlo, y hacer un escaneo con el antivirus.",
+    "@secNavFalseVirusP2": {
+        "description": "Párrafo 2 para apartado de navegación."
+    },
+    "secNavFalseVirusP3": "Muchas veces estas alertas son creadas por estafadores para hacerte pensar que tu teléfonoe está infectado. En realidad, suele ser lo que descargas desde la falsa alerta lo que contiene el virus.",
+    "@secNavFalseVirusP3": {
+        "description": "Párrafo 3 para apartado de navegación."
+    },
+
+    "secNavScams": "Si algo es demasiado bueno, no es real",
+    "@secNavScams": {
+        "description": "Título para apartado de navegación."
+    },
+    "secNavScamsP1": "Un elemento recurrente al navegar por internet son las estafas o intento de estafas. La mejor forma de preventir caer en ellas es navegar con la mentalidad de 'si es demasiado bueno para creerlo, no es real'.",
+    "@secNavScamsP1": {
+        "description": "Párrafo 1 para apartado de navegación."
+    },
+    "secNavScamsP2": "Estas estafas pueden tener multitud de formas y en la mayor parte de los casos intentan parecer empresas conocidas legítimas promocionando algún sorteo.",
+    "@secNavScamsP2": {
+        "description": "Párrafo 2 para apartado de navegación."
+    },
+    "secNavScamsP3": "Algunos ejemplos de estas estafas son páginas en las que pone que Amazon o Mercadona están sorteando tarjetas regalo o electrodomésticos de alto precio y solamente hay que contestar una encuesta. En realidad es una estafa y deberías salir de la página.",
+    "@secNavScamsP3": {
+        "description": "Párrafo 3 para apartado de navegación."
+    },
+
+    "secScamsMail": "Estafas en tu bandeja de entrada",
+    "@secScamsMail": {
+        "description": "Título para apartado de estafas."
+    },
+    "secScamsMailP1": "En algunas ocasiones las estafas pueden llegar a la puerta de tu bandeja de entrada. Esto suele ser imitando ser empresas de confianza.",
+    "@secScamsMailP1": {
+        "description": "Párrafo 1 para apartado de estafas."
+    },
+    "secScamsMailP2": "En muchos casos, tienen la forma de un pedido de coste elevado que en realidad no has hecho, o la llegada de un paquete.",
+    "@secScamsMailP2": {
+        "description": "Párrafo 2 para apartado de estafas."
+    },
+    "secScamsMailP3": "Es muy importante no entrar en estos correos ni los enlaces que incluyen. Si realmente sientes la necesidad de comprobar si la información es verdadera, no accedas al contacto del correo. Busca en Google la información de contacto de la empresa.",
+    "@secScamsMailP3": {
+        "description": "Párrafo 3 para apartado de estafas."
+    },
+
+
     "pressMoreInfo": "Pulsa aquí para más información.",
     "@pressMoreInfo": {
         "description": "Texto para el botón de más información."
@@ -61,6 +203,10 @@
     "@ytSubscribe": {
         "description": "Texto del botón de subscripción de YouTube."
     },
+    "ytLibraryText": "En esta pantalla puedes ver el historial de vídeos que has visto o tus listas guardadas.",
+    "@ytLibraryText": {
+        "description": "Texto de la pantalla de biblioteca de YouTube."
+    },
     "ytLikes": "1,3 mil.",
     "@ytLikes": {
         "description": "Texto del botón de me gusta de YouTube."
@@ -97,15 +243,23 @@
     "@ytLibBtnText": {
         "description": "Texto del botón de biblioteca de YouTube."
     },
+    "ytVideosText": "En esta pantalla YouTube te hará sugerencias de vídeos para ver.",
+    "@ytVideosText": {
+        "description": "Texto del botón de biblioteca de YouTube."
+    },
     "ytShortsText": "Esta es la pantalla de Shorts. En esta pantalla puedes ver vídeos cortos en formato vertical, cambiando de vídeo solamente deslizando el dedo por la pantalla.",
     "@ytShortsText": {
         "description": "Texto de la pantalla de Shorts."
+    },
+    "ytSubsText": "En la pantalla de subscripciones puedes ver los vídeos publicados por los canales a los que estás subscrito.",
+    "@ytSubsText": {
+        "description": "Texto de la pantalla de Subscripciones."
     },
     "ytAddText": "Esta es la pantalla de Shorts. En esta pantalla puedes ver vídeos cortos en formato vertical, cambiando de vídeo solamente deslizando el dedo por la pantalla.",
     "@ytAddText": {
         "description": "Texto de la pantalla de Añadir/Subir."
     },
-    "ytTVCast": "Esta es la pantalla de Shorts. En esta pantalla puedes ver vídeos cortos en formato vertical, cambiando de vídeo solamente deslizando el dedo por la pantalla.",
+    "ytTVCast": "Presionando este botón puedes reproducir tu contenido en la televisión si esta es compatible.",
     "@ytTVCast": {
         "description": "Texto de descripción de la acción de enviar a TV."
     },

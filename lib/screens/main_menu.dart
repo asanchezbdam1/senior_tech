@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:senior_tech/app_settings.dart';
 import 'package:senior_tech/custom-widgets/grad_button.dart';
 import 'package:senior_tech/screens/applist.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:senior_tech/screens/security_sections.dart';
+import 'package:senior_tech/screens/settings.dart';
 import 'package:senior_tech/tts-control.dart';
 import 'package:senior_tech/tts_control_button.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key}) : super(key: key);
-  GlobalKey _parentKey = GlobalKey();
 
   @override
   State<StatefulWidget> createState() => _MainMenuState();
@@ -31,16 +33,16 @@ class _MainMenuState extends State<MyHomePage> {
     );
     TTSControl.setText(AppLocalizations.of(context)!.titleWelcome);
     return Container(
+      padding: const EdgeInsets.all(30),
       decoration: const BoxDecoration(
         color: Color(0xFF273243),
       ),
       child: Center(
-        child: Column(
-          key: widget._parentKey,
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: [
             Text(
               AppLocalizations.of(context)!.title,
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 40,
@@ -74,6 +76,11 @@ class _MainMenuState extends State<MyHomePage> {
             const SizedBox(height: 30),
             GradButton(
               onPressed: () async {
+                await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SecuritySections(),
+                    ));
                 TTSControl.setText(AppLocalizations.of(context)!.titleWelcome);
               },
               child: Text(
@@ -83,6 +90,35 @@ class _MainMenuState extends State<MyHomePage> {
               ),
               gradient: const LinearGradient(
                 colors: [Color(0xFF1628CF), Color(0xFF2896E5)],
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+              ),
+              borderRadius: BorderRadius.circular(30),
+              height: 200,
+              width: 250,
+            ),
+            const SizedBox(height: 30),
+            GradButton(
+              onPressed: () async {
+                await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Settings(),
+                    ));
+                AppSettings.updateResources();
+                AppSettings.save();
+                TTSControl.setText(AppLocalizations.of(context)!.titleWelcome);
+              },
+              child: Text(
+                AppLocalizations.of(context)!.settings,
+                style: textStyle,
+                textAlign: TextAlign.center,
+              ),
+              gradient: const LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 70, 170, 56),
+                  Color.fromARGB(255, 232, 218, 112)
+                ],
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
               ),
